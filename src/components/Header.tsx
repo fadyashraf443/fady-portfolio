@@ -29,7 +29,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <img src="image.png" alt="Profile" className="w-8 h-8 rounded-full object-cover" />
+            <img src="https://res.cloudinary.com/dqclldzmd/image/upload/fl_preserve_transparency/v1750271671/image_s0apln.jpg?_s=public-apps" alt="Profile" className="w-8 h-8 rounded-full object-cover" />
             <span className="cyber-title text-xl">FADY.SYS</span>
           </div>
 
