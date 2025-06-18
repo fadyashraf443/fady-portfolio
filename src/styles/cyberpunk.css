@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --cyan: #00FFFF;
+  --neon-green: #00FF41;
+  --red-alert: #FF0040;
+  --dark-bg: #0a0a0a;
+  --glass-bg: rgba(0, 255, 255, 0.1);
+  --glass-border: rgba(0, 255, 255, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: var(--dark-bg);
+  color: var(--cyan);
+  overflow-x: hidden;
+}
+
+/* Cyberpunk Typography */
+.cyber-title {
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(45deg, var(--cyan), var(--neon-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 20px var(--cyan);
+}
+
+.cyber-subtitle {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  color: var(--neon-green);
+  text-shadow: 0 0 10px var(--neon-green);
+}
+
+.cyber-text {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Glass Morphism Effects */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--neon-green);
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Glowing Elements */
+.glow-cyan {
+  box-shadow: 0 0 20px var(--cyan);
+  border: 1px solid var(--cyan);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px var(--neon-green);
+  border: 1px solid var(--neon-green);
+}
+
+.glow-red {
+  box-shadow: 0 0 20px var(--red-alert);
+  border: 1px solid var(--red-alert);
+}
+
+/* Cyberpunk Buttons */
+.cyber-button {
+  position: relative;
+  padding: 12px 24px;
+  background: transparent;
+  border: 2px solid var(--cyan);
+  color: var(--cyan);
+  font-family: 'Orbitron', monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.cyber-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  transition: left 0.5s;
+}
+
+.cyber-button:hover::before {
+  left: 100%;
+}
+
+.cyber-button:hover {
+  color: var(--dark-bg);
+  background: var(--cyan);
+  box-shadow: 0 0 30px var(--cyan);
+}
+
+/* Circuit Lines Animation */
+.circuit-line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  height: 1px;
+  animation: circuit-flow 3s linear infinite;
+}
+
+@keyframes circuit-flow {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+/* Data Stream Animation */
+.data-stream {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--neon-green);
+  opacity: 0.7;
+  animation: data-scroll 2s linear infinite;
+}
+
+@keyframes data-scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); opacity: 0; }
+}
+
+/* Holographic Effect */
+.holographic {
+  position: relative;
+  background: linear-gradient(45deg, 
+    rgba(0, 255, 255, 0.1) 0%,
+    rgba(0, 255, 65, 0.1) 25%,
+    rgba(255, 0, 64, 0.1) 50%,
+    rgba(0, 255, 255, 0.1) 75%,
+    rgba(0, 255, 65, 0.1) 100%
+  );
+  background-size: 200% 200%;
+  animation: holographic-shift 4s ease-in-out infinite;
+}
+
+@keyframes holographic-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Terminal Effect */
+.terminal {
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid var(--neon-green);
+  font-family: 'Courier New', monospace;
+  color: var(--neon-green);
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.terminal-cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cyber-title {
+    font-size: 2rem;
+  }
+  
+  .cyber-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .glass-panel {
+    margin: 10px;
+    padding: 20px;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cyan);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-green);
+}
