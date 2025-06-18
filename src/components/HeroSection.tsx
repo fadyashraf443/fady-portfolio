@@ -106,7 +106,7 @@ SKILLS
           {/* Profile Section */}
           <div className="mb-8">
             <div className="w-32 h-32 mx-auto mb-6 rounded-full border-4 border-cyan-400 glow-cyan overflow-hidden">
-              <img src="image.png" alt="Profile" className="w-full h-full object-cover" />
+              <img src="src/components/image.png" alt="Profile" className="w-full h-full object-cover" />
             </div>
           </div>
 
